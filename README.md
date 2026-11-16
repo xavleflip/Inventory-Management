@@ -1,6 +1,6 @@
 # SasaStok
 
-**Stok tertata, dapur siap.**
+**Dapur yang tertata, usaha yang terjaga.**
 
 SasaStok adalah aplikasi web manajemen bahan baku Kantin Sasacil untuk memantau persediaan, mencatat bahan masuk dan keluar, mengelola penyesuaian stok, serta meninjau laporan. Pemilik usaha dan karyawan menggunakan antarmuka sesuai kewenangannya.
 
