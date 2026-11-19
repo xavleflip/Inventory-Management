@@ -9,3 +9,5 @@
 
 .stat.alert .stat-top,.stat.alert small{color:var(--chocolate)}
 .login-story small{color:var(--cream)}
+
+.badge.empty-stock{background:#FCE1D5;color:var(--red)}

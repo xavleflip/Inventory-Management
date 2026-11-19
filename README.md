@@ -79,7 +79,7 @@ Kredensial awal tidak ditampilkan pada halaman login. Hubungi pengelola jika aku
 - **Perlu diisi ulang:** jumlah bahan yang saldonya kurang dari atau sama dengan minimum.
 - **Transaksi hari ini:** jumlah catatan masuk dan keluar hari ini; penyesuaian dihitung terpisah.
 - **Penyesuaian bulan ini:** jumlah catatan penyesuaian bulan berjalan.
-- Tabel persediaan menampilkan saldo, minimum, dan status **Aman** atau **Stok minimum**.
+- Tabel persediaan menampilkan saldo, minimum, dan status **Stok habis** jika saldo 0, **Stok minimum** jika saldo di atas 0 sampai batas minimum, atau **Aman** jika saldo melebihi minimum. Filter status membedakan ketiga kondisi tersebut. Bahan habis tetap dihitung dalam bagian Perlu diisi ulang dan Perlu perhatian.
 - Panel **Perlu perhatian** menampilkan bahan yang perlu diperiksa atau diisi ulang.
 - **Aktivitas terbaru** menampilkan lima pencatatan terbaru. Tombol **Catat transaksi**, **Catat bahan rusak**, **Lihat semua**, dan **Lihat riwayat** membuka menu terkait.
 
