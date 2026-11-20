@@ -189,8 +189,6 @@ sasacil/
 ├── model.js                # Logika stok, akun, validasi, filter, dan CSV
 ├── app.js                  # Antarmuka, interaksi, dan penyimpanan lokal
 ├── README.md               # Dokumentasi utama dan panduan seluruh menu
-├── PETUNJUK.md             # Pengarah ke dokumentasi utama
-├── VERIFIKASI.md           # Riwayat pemeriksaan
 ├── pratinjau-login.png     # Tampilan login
 ├── pratinjau-desktop.png   # Tampilan komputer
 └── pratinjau-mobile.png    # Tampilan layar kecil
@@ -228,27 +226,7 @@ Pembaruan berkas pada asal situs yang sama mempertahankan data selama penyimpana
 | Hosting masih memperlihatkan tampilan lama | Periksa hasil publikasi Pages dan muat ulang. Perubahan lokal belum tentu sudah terunggah. |
 | Data hilang setelah penyimpanan dihapus | CSV hanya membantu meninjau catatan yang diekspor; belum ada pemulihan penuh. Hubungi pengelola. |
 
-## Dokumentasi dan Verifikasi
+## Dokumentasi
 
-README menjadi panduan utama seluruh menu. [PETUNJUK.md](PETUNJUK.md) mengarah ke dokumen ini agar tidak ada petunjuk operasional ganda yang berbeda. [VERIFIKASI.md](VERIFIKASI.md) menyimpan hasil pemeriksaan terdahulu dan pembaruan SasaStok.
 
 Pratinjau: [login](pratinjau-login.png), [komputer](pratinjau-desktop.png), dan [layar kecil](pratinjau-mobile.png).
-
-Laporan awal 8 November 2026 berisi 24 halaman dan 18 screenshot versi sebelum pembaruan identitas. Laporan tersimpan terpisah dari folder ini dan bukan panduan tampilan SasaStok terbaru.
-
-### Perubahan 16 November 2026
-
-- Identitas dan judul menggunakan **SasaStok** dengan tagline **Stok tertata, dapur siap.**
-- Login menggunakan formulir akun biasa tanpa kredensial publik maupun tombol pengisian akun demo.
-- Label prototipe/demo dan tombol pengaturan ulang data dihapus dari antarmuka; penanganan aksi reset juga dihapus.
-- Kunci penyimpanan dan aturan stok dipertahankan agar data lama tetap terbaca.
-- Nama unduhan laporan menggunakan awalan `sasastok-`.
-- Panduan seluruh menu dan tautan hosting dihimpun dalam README.
-
-- Palet antarmuka mengikuti warna yang dipilih pengelola: kuning, oranye, hijau, krem, dan cokelat gelap.
-
-## Revisi masukan dosen — 20 November 2026
-
-- Keempat kartu Ringkasan dapat ditekan dengan mouse, disentuh, atau diaktifkan melalui keyboard untuk membuka rincian yang sesuai.
-- Kode bahan dibuat otomatis saat penyimpanan; formulir langsung memfokuskan nama bahan dan mempertahankan kode bahan lama.
-- Istilah Persediaan awal/akhir menggantikan Saldo awal/akhir pada formulir, penjelasan, rekap, validasi, dan ekspor CSV. Tombol pembersihan filter memakai istilah Bersihkan filter.
