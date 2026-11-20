@@ -75,11 +75,11 @@ Kredensial awal tidak ditampilkan pada halaman login. Hubungi pengelola jika aku
 
 ### 1. Ringkasan
 
-- **Total bahan baku:** jumlah jenis bahan, bukan penjumlahan kuantitas dengan satuan berbeda.
-- **Perlu diisi ulang:** jumlah bahan yang saldonya kurang dari atau sama dengan minimum.
-- **Transaksi hari ini:** jumlah catatan masuk dan keluar hari ini; penyesuaian dihitung terpisah.
-- **Penyesuaian bulan ini:** jumlah catatan penyesuaian bulan berjalan.
-- Tabel persediaan menampilkan saldo, minimum, dan status **Stok habis** jika saldo 0, **Stok minimum** jika saldo di atas 0 sampai batas minimum, atau **Aman** jika saldo melebihi minimum. Filter status membedakan ketiga kondisi tersebut. Bahan habis tetap dihitung dalam bagian Perlu diisi ulang dan Perlu perhatian.
+- **Total bahan baku:** jumlah jenis bahan. Tekan kartu untuk membuka daftar seluruh bahan.
+- **Perlu diisi ulang:** jumlah bahan habis atau mencapai minimum. Tekan kartu untuk membuka daftar dengan filter **Perlu diisi ulang**, mencakup **Stok habis** dan **Stok minimum**.
+- **Transaksi hari ini:** jumlah catatan masuk dan keluar hari ini. Tekan kartu untuk membuka riwayat hari ini dengan jenis **Bahan masuk dan keluar**, tanpa penyesuaian.
+- **Penyesuaian bulan ini:** jumlah catatan penyesuaian bulan berjalan. Tekan kartu untuk membuka riwayat penyesuaian dari awal bulan sampai hari ini.
+- Tabel persediaan menampilkan persediaan, minimum, dan status **Stok habis** jika persediaan 0, **Stok minimum** jika persediaan di atas 0 sampai batas minimum, atau **Aman** jika persediaan melebihi minimum. Filter status membedakan ketiga kondisi tersebut. Bahan habis tetap dihitung dalam bagian Perlu diisi ulang dan Perlu perhatian.
 - Panel **Perlu perhatian** menampilkan bahan yang perlu diperiksa atau diisi ulang.
 - **Aktivitas terbaru** menampilkan lima pencatatan terbaru. Tombol **Catat transaksi**, **Catat bahan rusak**, **Lihat semua**, dan **Lihat riwayat** membuka menu terkait.
 
@@ -87,9 +87,9 @@ Kredensial awal tidak ditampilkan pada halaman login. Hubungi pengelola jika aku
 
 **Mencari dan menyaring:** isi nama atau kode pada **Cari bahan**, pilih **Status stok**, lalu tekan **Terapkan**. Untuk menampilkan semua, kosongkan pencarian, pilih **Semua status**, dan terapkan kembali.
 
-**Menambah — pemilik:** tekan **Tambah bahan**, isi kode unik, nama, satuan (`kg`, `liter`, `pcs`, atau `gram`), saldo awal, dan batas minimum. Tekan **Simpan bahan**. Gunakan **Batal** atau tombol tutup untuk membatalkan.
+**Menambah — pemilik:** tekan **Tambah bahan**, isi nama, satuan (`kg`, `liter`, `pcs`, atau `gram`), persediaan awal, dan batas minimum. Kode bahan terisi otomatis (`BB-009`, `BB-010`, dan seterusnya) dan tidak perlu diketik. Nomor ditetapkan saat penyimpanan berhasil, melanjutkan kode BB terbesar yang ada. Nomor yang telah dipakai tidak digunakan kembali saat bahan dihapus. Kode lama tetap dipertahankan. Fokus langsung berada pada nama bahan. Tekan **Simpan bahan**. Gunakan **Batal** atau tombol tutup untuk membatalkan.
 
-**Mengubah — pemilik:** tekan **Ubah** pada baris bahan, sesuaikan isian, dan simpan. Setelah bahan memiliki transaksi, saldo awal dan satuannya dikunci. Kode, nama, serta minimum tetap dapat diperbarui. Perubahan stok operasional dilakukan melalui transaksi.
+**Mengubah — pemilik:** tekan **Ubah** pada baris bahan, sesuaikan isian, dan simpan. Setelah bahan memiliki transaksi, persediaan awal dan satuannya dikunci. Nama dan minimum tetap dapat diperbarui; kode bahan tetap. Perubahan stok operasional dilakukan melalui transaksi.
 
 **Menghapus — pemilik:** tekan **Hapus**, baca konfirmasi, lalu pilih **Konfirmasi** atau **Batal**. Bahan yang memiliki riwayat tidak dapat dihapus; penghapusan hanya untuk master tanpa riwayat.
 
@@ -98,31 +98,31 @@ Karyawan hanya melihat daftar, pencarian, dan filter tanpa tombol pengelolaan ma
 ### 3. Transaksi
 
 1. Pilih **Bahan masuk** untuk penerimaan atau **Bahan keluar** untuk pemakaian dapur.
-2. Pilih bahan; daftar menampilkan kode, nama, saldo, dan satuan.
+2. Pilih bahan; daftar menampilkan kode, nama, persediaan, dan satuan.
 3. Isi jumlah positif, tanggal, serta catatan opsional.
-4. Periksa perkiraan saldo dan identitas pencatat, kemudian tekan **Simpan transaksi**.
+4. Periksa perkiraan persediaan dan identitas pencatat, kemudian tekan **Simpan transaksi**.
 
-Bahan masuk menambah stok; bahan keluar menguranginya. Pengeluaran yang membuat saldo negatif ditolak. Pratinjau memperlihatkan perubahan terhadap stok terkini, sedangkan pemeriksaan saat menyimpan juga memeriksa urutan transaksi bertanggal. Transaksi mundur tanggal dapat ditolak meskipun perkiraan saldo terkini terlihat cukup.
+Bahan masuk menambah stok; bahan keluar menguranginya. Pengeluaran yang membuat persediaan negatif ditolak. Pratinjau memperlihatkan perubahan terhadap stok terkini, sedangkan pemeriksaan saat menyimpan juga memeriksa urutan transaksi bertanggal. Transaksi mundur tanggal dapat ditolak meskipun perkiraan persediaan terkini terlihat cukup.
 
-Pencatatan yang berhasil langsung memperbarui saldo dan riwayat. **Pencatatan terbaru** menampilkan hingga sepuluh catatan masuk/keluar. Pencatat diisi otomatis dari akun yang sedang masuk. Belum tersedia pengubahan atau penghapusan transaksi yang sudah disimpan; periksa isian sebelum menyimpan.
+Pencatatan yang berhasil langsung memperbarui persediaan dan riwayat. **Pencatatan terbaru** menampilkan hingga sepuluh catatan masuk/keluar. Pencatat diisi otomatis dari akun yang sedang masuk. Belum tersedia pengubahan atau penghapusan transaksi yang sudah disimpan; periksa isian sebelum menyimpan.
 
 ### 4. Penyesuaian stok
 
 1. Pilih bahan yang akan dikurangi.
 2. Pilih alasan **Rusak**, **Kedaluwarsa**, atau **Hilang**.
 3. Isi jumlah dan tanggal.
-4. Isi **Keterangan spesifik**, misalnya kondisi bahan atau penyebab kehilangan; kolom ini wajib.
-5. Periksa perkiraan saldo dan identitas pencatat, lalu tekan **Simpan penyesuaian**.
+4. Isi **Keterangan penyesuaian**, misalnya kondisi bahan atau penyebab kehilangan; kolom ini wajib.
+5. Periksa perkiraan persediaan dan identitas pencatat, lalu tekan **Simpan penyesuaian**.
 
-Penyesuaian selalu mengurangi stok dan tidak boleh menyebabkan saldo negatif. Riwayat menampilkan alasan, keterangan, dan identitas pencatat. Penambahan persediaan dilakukan melalui **Bahan masuk**, bukan penyesuaian.
+Penyesuaian selalu mengurangi stok dan tidak boleh menyebabkan persediaan negatif. Riwayat menampilkan alasan, keterangan, dan identitas pencatat. Penambahan persediaan dilakukan melalui **Bahan masuk**, bukan penyesuaian.
 
 ### 5. Laporan & riwayat
 
-**Filter:** pilih **Dari tanggal**, **Sampai tanggal**, **Bahan baku**, dan/atau **Jenis**, lalu tekan **Terapkan**. Isian boleh dikosongkan untuk menampilkan seluruh data. Tanggal awal tidak boleh melewati tanggal akhir; kedua batas tanggal termasuk dalam hasil. Tekan **Reset** untuk membersihkan filter laporan saja.
+**Filter:** pilih **Dari tanggal**, **Sampai tanggal**, **Bahan baku**, dan/atau **Jenis**, lalu tekan **Terapkan**. Isian boleh dikosongkan untuk menampilkan seluruh data. Tanggal awal tidak boleh melewati tanggal akhir; kedua batas tanggal termasuk dalam hasil. Tekan **Bersihkan filter** untuk membersihkan filter laporan saja.
 
 Riwayat menampilkan tanggal, bahan, jenis, jumlah, catatan/alasan, nama pencatat, dan ID pengguna.
 
-**Rekap persediaan — pemilik:** menampilkan saldo awal periode, total masuk, total keluar, penyesuaian, serta saldo akhir periode. Rekap mengikuti tanggal dan bahan, tetapi selalu menghitung seluruh jenis pergerakan. Filter **Jenis** hanya memengaruhi tabel riwayat. Jika tanggal awal kosong, perhitungan dimulai dari saldo awal bahan.
+**Rekap persediaan — pemilik:** menampilkan persediaan awal periode, total masuk, total keluar, penyesuaian, serta persediaan akhir periode. Rekap mengikuti tanggal dan bahan, tetapi selalu menghitung seluruh jenis pergerakan. Filter **Jenis** hanya memengaruhi tabel riwayat. Jika tanggal awal kosong, perhitungan dimulai dari persediaan awal bahan.
 
 **Ekspor — pemilik:**
 
@@ -145,15 +145,15 @@ CSV merupakan laporan, bukan cadangan lengkap akun dan aplikasi. Belum ada impor
 ## Aturan Perhitungan dan Validasi
 
 ```text
-Stok terkini = saldo awal + bahan masuk − bahan keluar − penyesuaian
+Stok terkini = persediaan awal + bahan masuk − bahan keluar − penyesuaian
 ```
 
-- Saldo awal dan minimum boleh nol; jumlah transaksi harus lebih besar dari nol.
+- Persediaan awal dan minimum boleh nol; jumlah transaksi harus lebih besar dari nol.
 - Jumlah maksimal dua desimal. Nilai disimpan secara internal sebagai bilangan bulat per 1/100 satuan untuk menghindari akumulasi galat pecahan.
 - Satuan mengikuti bahan. Tidak ada konversi otomatis, misalnya antara kg dan gram.
 - Tanggal tidak boleh melewati hari ini berdasarkan zona `Asia/Jakarta`.
-- Transaksi mundur tanggal diperiksa terhadap seluruh lintasan saldo; transaksi bertanggal sama mengikuti urutan pencatatan.
-- Peringatan minimum aktif ketika saldo **kurang dari atau sama dengan** ambang minimum.
+- Transaksi mundur tanggal diperiksa terhadap seluruh lintasan persediaan; transaksi bertanggal sama mengikuti urutan pencatatan.
+- Peringatan minimum aktif ketika persediaan **kurang dari atau sama dengan** ambang minimum.
 - Nama pencatat saat transaksi disimpan ikut direkam agar penelusuran tetap tersedia setelah akun diperbarui.
 
 ## Penyimpanan dan Sesi
@@ -166,7 +166,7 @@ Data tersimpan di `localStorage`. Kunci lama `sasacil-prototype-v1` sengaja dipe
 - Mode privat dapat menghapus data setelah sesi ditutup. Menghapus data situs juga menghapus catatan aplikasi.
 - Perubahan tab lain meminta login ulang. Pemeriksaan revisi menolak konflik yang terdeteksi, tetapi tidak menyediakan transaksi atomik seperti database.
 
-Tombol pengisian akun demo dan pengaturan ulang seluruh data telah dihapus. **Reset** pada laporan hanya membersihkan filter, bukan menghapus stok atau akun. Jangan menghapus penyimpanan situs sebagai langkah penanganan masalah rutin karena pemulihan lengkap belum tersedia.
+Tombol pengisian akun demo dan pengaturan ulang seluruh data telah dihapus. **Bersihkan filter** pada laporan hanya membersihkan filter, bukan menghapus stok atau akun. Jangan menghapus penyimpanan situs sebagai langkah penanganan masalah rutin karena pemulihan lengkap belum tersedia.
 
 ## Palet Warna Antarmuka
 
@@ -220,7 +220,7 @@ Pembaruan berkas pada asal situs yang sama mempertahankan data selama penyimpana
 | Login ditolak | Periksa email, sandi, status aktif, serta browser/alamat. Hubungi pemilik untuk memeriksa akun. |
 | Akun awal tidak berfungsi | Akun pada browser tersebut mungkin sudah diubah atau dinonaktifkan; gunakan pemilik aktif lain jika tersedia. |
 | Data hosting, lokal, atau ponsel berbeda | Penyimpanannya terpisah; kembali ke browser dan alamat asal data. Belum ada sinkronisasi. |
-| Stok keluar ditolak walaupun saldo terkini cukup | Periksa jumlah, satuan, tanggal, serta lintasan saldo setelah transaksi mundur tanggal. |
+| Stok keluar ditolak walaupun persediaan terkini cukup | Periksa jumlah, satuan, tanggal, serta lintasan persediaan setelah transaksi mundur tanggal. |
 | Bahan atau pengguna tidak bisa dihapus | Data memiliki riwayat atau merupakan akun yang dilindungi. Nonaktifkan pengguna bila memungkinkan. |
 | Perubahan bertabrakan dengan tab lain | Masuk/muat ulang sesuai pesan, periksa data terbaru, lalu ulangi tindakan sekali. Hindari simpan serentak. |
 | CSV terbuka sebagai satu kolom | Impor sebagai CSV dengan pemisah koma dan encoding UTF-8. |
@@ -246,3 +246,9 @@ Laporan awal 8 November 2026 berisi 24 halaman dan 18 screenshot versi sebelum p
 - Panduan seluruh menu dan tautan hosting dihimpun dalam README.
 
 - Palet antarmuka mengikuti warna yang dipilih pengelola: kuning, oranye, hijau, krem, dan cokelat gelap.
+
+## Revisi masukan dosen — 20 November 2026
+
+- Keempat kartu Ringkasan dapat ditekan dengan mouse, disentuh, atau diaktifkan melalui keyboard untuk membuka rincian yang sesuai.
+- Kode bahan dibuat otomatis saat penyimpanan; formulir langsung memfokuskan nama bahan dan mempertahankan kode bahan lama.
+- Istilah Persediaan awal/akhir menggantikan Saldo awal/akhir pada formulir, penjelasan, rekap, validasi, dan ekspor CSV. Tombol pembersihan filter memakai istilah Bersihkan filter.

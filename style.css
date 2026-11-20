@@ -11,3 +11,9 @@
 .login-story small{color:var(--cream)}
 
 .badge.empty-stock{background:#FCE1D5;color:var(--red)}
+
+/* Kartu ringkasan adalah pintasan menuju daftar yang sudah disaring. */
+.stats .stat{width:100%;min-width:0;text-align:left;font-weight:400;transition:border-color .15s,box-shadow .15s}
+.stats .stat:hover{border-color:var(--orange);box-shadow:0 3px 12px #3B2F2F14}
+.stat small{display:block}
+.stat-link{display:block;font-size:11px;font-weight:600;color:var(--primary);margin-top:14px}

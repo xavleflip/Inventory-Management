@@ -24,15 +24,25 @@
     const m = s.materials.find(m => m.id === mid);
     return m ? m.initial + s.transactions.filter(t => t.materialId === mid && (before ? t.date < end : t.date <= end)).reduce((n,t) => n + (t.type === 'masuk' ? t.quantity : -t.quantity),0) : 0;
   };
+  function nextMaterialCode(s) {
+    let highest=BigInt(s.materialCodeSequence||'0');
+    for(const m of s.materials) {
+      const match=/^BB-(\d+)$/i.exec(m.code);
+      if(match && BigInt(match[1])>highest) highest=BigInt(match[1]);
+    }
+    const code='BB-'+String(highest+1n).padStart(3,'0');
+    if(code.length>50) fail('Nomor kode bahan telah mencapai batas. Hubungi pengelola.');
+    return code;
+  }
   function material(s, uid, f) {
     actor(s,uid,true);
     const old = f.id ? s.materials.find(m => m.id === f.id) : null;
     if (f.id && !old) fail('Bahan tidak ditemukan.');
-    const m = {id:old?.id || id(), code:text(f.code,'Kode').toUpperCase(), name:text(f.name,'Nama'), unit:text(f.unit,'Satuan'), initial:amount(f.initial), minimum:amount(f.minimum)};
+    const m = {id:old?.id || id(), code:old?old.code:nextMaterialCode(s), name:text(f.name,'Nama'), unit:text(f.unit,'Satuan'), initial:amount(f.initial), minimum:amount(f.minimum)};
     if (!['kg','liter','pcs','gram'].includes(m.unit)) fail('Satuan tidak valid.');
     if (s.materials.some(x => x.id !== m.id && x.code === m.code)) fail('Kode bahan sudah digunakan.');
-    if (old && s.transactions.some(t => t.materialId === m.id) && (m.initial !== old.initial || m.unit !== old.unit)) fail('Saldo awal dan satuan terkunci karena bahan memiliki riwayat. Gunakan transaksi untuk mengubah stok.');
-    if (old) Object.assign(old,m); else s.materials.push(m);
+    if (old && s.transactions.some(t => t.materialId === m.id) && (m.initial !== old.initial || m.unit !== old.unit)) fail('Persediaan awal dan satuan terkunci karena bahan memiliki riwayat. Gunakan transaksi untuk mengubah stok.');
+    if (old) Object.assign(old,m); else {s.materials.push(m);s.materialCodeSequence=String(BigInt(m.code.slice(3)));}
     return m;
   }
   function removeMaterial(s,uid,mid) {
@@ -93,7 +103,7 @@
   }
   const filter = (s,f={}) => {
     if(f.start&&f.end&&f.start>f.end) fail('Tanggal mulai tidak boleh melewati tanggal akhir.');
-    return s.transactions.filter(t=>(!f.start||t.date>=f.start)&&(!f.end||t.date<=f.end)&&(!f.materialId||t.materialId===f.materialId)&&(!f.type||t.type===f.type)).slice().reverse().sort((a,b)=>b.date.localeCompare(a.date));
+    return s.transactions.filter(t=>(!f.start||t.date>=f.start)&&(!f.end||t.date<=f.end)&&(!f.materialId||t.materialId===f.materialId)&&(!f.type||(f.type==='movement'?(t.type==='masuk'||t.type==='keluar'):t.type===f.type))).slice().reverse().sort((a,b)=>b.date.localeCompare(a.date));
   };
   function csv(rows) {
     return '\uFEFF'+rows.map(row=>row.map(v=>{let t=String(v??'');if(/^[\s]*[=+@-]/.test(t))t="'"+t;return '"'+t.replaceAll('"','""')+'"';}).join(',')).join('\r\n');
@@ -105,5 +115,5 @@
     for(const [mid,type,q,notes,reason] of [['m0','masuk',10,'Belanja bahan pagi'],['m1','keluar',12,'Penggorengan menu harian'],['m2','keluar',7,'Persiapan lauk telur'],['m3','keluar',8,'Menu ayam goreng'],['m6','adjustment',3,'Cabai rusak saat pemeriksaan','Rusak'],['m4','keluar',4,'Persiapan minuman']]) transact(s,'u2',{materialId:mid,type,quantity:q,date:today(),notes,reason});
     return s;
   }
-  globalThis.Sasacil={amount,today,actor,balance,material,removeMaterial,transact,saveUser,removeUser,login,filter,csv,seed};
+  globalThis.Sasacil={amount,today,actor,balance,nextMaterialCode,material,removeMaterial,transact,saveUser,removeUser,login,filter,csv,seed};
 })();
