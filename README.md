@@ -80,14 +80,15 @@ Kredensial awal tidak ditampilkan pada halaman login. Hubungi pengelola jika aku
 - **Transaksi hari ini:** jumlah catatan masuk dan keluar hari ini. Tekan kartu untuk membuka riwayat hari ini dengan jenis **Bahan masuk dan keluar**, tanpa penyesuaian.
 - **Penyesuaian bulan ini:** jumlah catatan penyesuaian bulan berjalan. Tekan kartu untuk membuka riwayat penyesuaian dari awal bulan sampai hari ini.
 - Tabel persediaan menampilkan persediaan, minimum, dan status **Stok habis** jika persediaan 0, **Stok minimum** jika persediaan di atas 0 sampai batas minimum, atau **Aman** jika persediaan melebihi minimum. Filter status membedakan ketiga kondisi tersebut. Bahan habis tetap dihitung dalam bagian Perlu diisi ulang dan Perlu perhatian.
-- Panel **Perlu perhatian** menampilkan bahan yang perlu diperiksa atau diisi ulang.
+- Angka **Stok tersedia** ditampilkan lebih tebal dan berwarna hijau tua untuk stok aman, cokelat oranye tua untuk stok minimum, serta merah tua untuk stok habis. Label status tetap ditampilkan agar kondisi tidak dibedakan hanya melalui warna.
+- Panel **Perlu perhatian** menampilkan bahan yang perlu diperiksa atau diisi ulang, dengan warna angka yang sama seperti tabel persediaan.
 - **Aktivitas terbaru** menampilkan lima pencatatan terbaru. Tombol **Catat transaksi**, **Catat bahan rusak**, **Lihat semua**, dan **Lihat riwayat** membuka menu terkait.
 
 ### 2. Bahan baku
 
 **Mencari dan menyaring:** isi nama atau kode pada **Cari bahan**, pilih **Status stok**, lalu tekan **Terapkan**. Untuk menampilkan semua, kosongkan pencarian, pilih **Semua status**, dan terapkan kembali.
 
-**Menambah — pemilik:** tekan **Tambah bahan**, isi nama, satuan (`kg`, `liter`, `pcs`, atau `gram`), persediaan awal, dan batas minimum. Kode bahan terisi otomatis (`BB-009`, `BB-010`, dan seterusnya) dan tidak perlu diketik. Nomor ditetapkan saat penyimpanan berhasil, melanjutkan kode BB terbesar yang ada. Nomor yang telah dipakai tidak digunakan kembali saat bahan dihapus. Kode lama tetap dipertahankan. Fokus langsung berada pada nama bahan. Tekan **Simpan bahan**. Gunakan **Batal** atau tombol tutup untuk membatalkan.
+**Menambah — pemilik:** tekan **Tambah bahan**, isi nama, satuan (`kg`, `liter`, `pcs`, atau `gram`), persediaan awal, dan batas minimum. Kolom kode tidak ditampilkan pada formulir. Kode bahan dibuat otomatis (`BB-009`, `BB-010`, dan seterusnya) saat disimpan dan ditampilkan pada daftar bahan. Urutan isian adalah **Nama bahan → Satuan dasar → Persediaan awal → Batas stok minimum**. Nomor ditetapkan saat penyimpanan berhasil, melanjutkan kode BB terbesar yang ada. Nomor yang telah dipakai tidak digunakan kembali saat bahan dihapus. Kode lama tetap dipertahankan. Fokus langsung berada pada nama bahan. Tekan **Simpan bahan**. Gunakan **Batal** atau tombol tutup untuk membatalkan.
 
 **Mengubah — pemilik:** tekan **Ubah** pada baris bahan, sesuaikan isian, dan simpan. Setelah bahan memiliki transaksi, persediaan awal dan satuannya dikunci. Nama dan minimum tetap dapat diperbarui; kode bahan tetap. Perubahan stok operasional dilakukan melalui transaksi.
 
