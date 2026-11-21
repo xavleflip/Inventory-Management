@@ -119,7 +119,7 @@ Penyesuaian selalu mengurangi stok dan tidak boleh menyebabkan persediaan negati
 
 ### 5. Laporan & riwayat
 
-**Filter:** pilih **Dari tanggal**, **Sampai tanggal**, **Bahan baku**, dan/atau **Jenis**, lalu tekan **Terapkan**. Isian boleh dikosongkan untuk menampilkan seluruh data. Tanggal awal tidak boleh melewati tanggal akhir; kedua batas tanggal termasuk dalam hasil. Tekan **Bersihkan filter** untuk membersihkan filter laporan saja.
+**Filter otomatis:** ubah **Dari tanggal**, **Sampai tanggal**, **Bahan baku**, dan/atau **Jenis**. Riwayat dan rekap langsung menyesuaikan tanpa tombol Terapkan. Filter tanggal tetap dapat dikoreksi apabila rentangnya tidak valid. Isian boleh dikosongkan untuk menampilkan seluruh data. Tanggal awal tidak boleh melewati tanggal akhir; kedua batas tanggal termasuk dalam hasil. Tekan **Bersihkan filter** untuk membersihkan filter laporan saja.
 
 Riwayat menampilkan tanggal, bahan, jenis, jumlah, catatan/alasan, nama pencatat, dan ID pengguna.
 
